@@ -1,0 +1,48 @@
+name: Build & Release Modpack
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Install Packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
+      - name: Build Modrinth Package (.mrpack)
+        run: packwiz modrinth export -o release.mrpack
+
+      - name: Upload to Modrinth
+        uses: Kira-NT/mc-publish@v3
+        with:
+          # === Modrinth ===
+          modrinth-id: mqGoJZwG
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-files: release.mrpack
+
+          # === Gemeinsame Einstellungen ===
+          name: ${{ github.event.release.name }}
+          version: ${{ github.event.release.tag_name }}
+          version-type: ${{ github.event.release.prerelease && 'beta' || 'release' }}
+          loaders: fabric
+          game-versions: "26.2"
+
+      - name: Attach files to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release.mrpack
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

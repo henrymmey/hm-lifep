@@ -1,0 +1,13 @@
+name = "HM Life+"
+author = "henrymmey"
+version = "26.2-2.0.1"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "34ace6777cf38e1143080b6c62cd53e6b37b31a18e4e1404a2eb7517df34452b"
+
+[versions]
+fabric = "0.19.5"
+minecraft = "26.2"
