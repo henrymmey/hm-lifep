@@ -1,19 +1,22 @@
 # HM Life+
 
-A client-side Fabric modpack for Minecraft 26.2 focused on performance optimization, quality-of-life improvements, and visual enhancements. Managed with [packwiz](https://packwiz.tools/) and automatically published to [Modrinth](https://modrinth.com/).
+[![Static Badge](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/henrymmey)
+[![Static Badge](https://img.shields.io/badge/Website-henrymeyer.de/gaming-green)](https://henrymeyer.de/gaming)
+
+---
+
+This modpack aims to make Survival Let's Plays and SMP server experiences more enjoyable. It offers significantly more improvements and features than the [HM Basic Play](https://modrinth.com/modpack/hm-basic-play) modpack.
+
+This modpack may be restricted on some public servers due to mods like MouseTweaks or ClientSort. Use it at your own risk and stay informed about server rules.
+
+---
 
 ## Features
 
-- **Performance** — Sodium, Lithium, Iris, FerriteCore, C2ME, VMP, ImmediatelyFast, ModernFix, BadOptimizations, Entity/More Culling, and Bobby for distant-chunk caching
-- **Visuals** — Complementary Reimagined/Unbound and MakeUp Ultra Fast shaders, Euphoria Patches, 3D skin layers, wavey capes, and custom green-ore resource packs
-- **Quality of Life** — Zoomify, Dynamic Crosshair, dynamic FPS, Simple Voice Chat, Xaero's maps, AppleSkin, Jade, Better Advancements/Stats, mouse tweaks, shulker box tooltips, crafting tweaks, and Mod Menu integration
-- **Utilities** — Litematica, MiniHUD, FreeCam, FreeLook, client sorting, command keys, and more
-- **Privacy** — No Chat Reports
-- **Cross-version support** — ViaFabricPlus
-
-## Installation
-
-Download the latest `.mrpack` from [Modrinth](https://modrinth.com/modpack/kUYTdD3h), then open it with the Modrinth App or any launcher that supports `.mrpack` files.
+* **Small performance Optimizations:** Built on the latest Fabric loader with essential mods like Sodium, Lithium, and FerriteCore for a smooth experience.
+* **Quality of Life:** Enhancements like dynamic crosshairs, better UI handling, Freecam, and more.
+* **Visual Improvements:** Includes Iris Shaders, EuphoriaPatches, and 3D Skin Layers for a modern and polished look.
+* **Vanilla-Friendly:** Subtle gameplay changes that preserve the classic Minecraft feeling you know and love.
 
 ## Development
 
@@ -49,4 +52,4 @@ pack.toml        — Modpack metadata (name, version, loaders)
 
 ## Release
 
-Releases are built and published to Modrinth automatically via GitHub Actions (`.github/workflows/release.yml`) when a GitHub Release is published. The workflow exports the pack using `packwiz modrinth export` and uploads the resulting `.mrpack` to Modrinth, then attaches it to the GitHub Release.
+Create a release with proper Tags and Name. Everything should be published automatically.
